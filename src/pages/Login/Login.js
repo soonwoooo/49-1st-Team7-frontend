@@ -1,8 +1,66 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.scss';
 
-function Login() {
-  return <p1>로그인 페이지입니다</p1>;
-}
+const Login = () => {
+  const navigate = useNavigate();
 
+  const handleLogin = () => {
+    navigate('/join');
+  };
+
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
+
+  const saveUserId = event => {
+    setId(event.target.value);
+  };
+  const saveUserPw = event => {
+    setPw(event.target.value);
+  };
+  const isInputValid = id.includes('@', '.') && pw.length >= 10;
+
+  return (
+    <div className="login">
+      <div className="Container">
+        <div className="imageContainer">
+          <img className="logo" src="/images/Logo.png" alt="로고" />
+          <img className="wecode" src="/images/logo_wecode.png" alt="위코드" />
+        </div>
+        <div className="inputContainer">
+          <input
+            className="userInfo"
+            type="text"
+            placeholder="이메일"
+            name="email"
+            onChange={saveUserId}
+          />
+          <input
+            className="userInfo"
+            type="text"
+            placeholder="비밀번호"
+            name="password"
+            onChange={saveUserPw}
+          />
+          <button
+            className={isInputValid ? 'loginBtn' : 'loginBtnDisabled'}
+            disabled={isInputValid ? false : true}
+            onClick={handleLogin}
+          >
+            로그인
+          </button>
+        </div>
+        <div className="loginOption">
+          <div className="join">
+            <span>회원가입</span>
+          </div>
+          <div className="bar">|</div>
+          <div className="Findpass">
+            <span>비밀번호 찾기</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 export default Login;
