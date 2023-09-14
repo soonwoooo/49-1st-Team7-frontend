@@ -1,41 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Join.scss';
 
 const Main = () => {
-  const SelectsBirthYear = () => {
-    const years = [];
-    for (let i = 2023; i >= 1920; i--) {
-      years.push(<option key={i}>{i}년</option>);
-    }
-    return (
-      <select className="birthYear" id="birthSelect" defaultValue="2000년">
-        {years}
-      </select>
-    );
+  const [id, SetId] = useState('');
+  const [pw, SetPw] = useState('');
+  const [pw2, SetPw2] = useState('');
+  const [nick, SetNick] = useState('');
+
+  const saveUserId = event => {
+    SetId(event.target.value);
+  };
+  const saveUserPw = event => {
+    SetPw(event.target.value);
+  };
+  const saveUserPw2 = event => {
+    SetPw2(event.target.value);
+  };
+  const saveUserNick = event => {
+    SetNick(event.target.value);
   };
 
-  const SelectsBirtMonth = () => {
-    const months = [];
-    for (let i = 1; i <= 12; i++) {
-      months.push(<option key={i}>{i}월</option>);
-    }
-    return (
-      <select className="birthMonth" defaultValue="1월">
-        {months}
-      </select>
-    );
-  };
+  const isInputValid =
+    id.includes('@') && id.includes('.') && pw.length && pw2.length >= 10;
 
-  const SelectsBirtDay = () => {
-    const days = [];
-    for (let i = 1; i <= 31; i++) {
-      days.push(<option key={i}>{i}일</option>);
-    }
-    return (
-      <select className="birthDay" defaultValue="1일">
-        {days}
-      </select>
-    );
+  const handleclick = () => {
+    fetch('http://localhost:8000/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({
+        email: id,
+        password: pw,
+        password2: pw2,
+        nickname: nick,
+      }),
+    })
+      .then(response => response.json())
+      .then(data => console.log(data));
   };
 
   return (
@@ -43,11 +46,13 @@ const Main = () => {
       <div className="joinInfo">
         <header>
           <div className="backDiv">
-            <img
-              className="backIcon"
-              src="/images/Back_arrow.png"
-              alt="뒤로가기"
-            />
+            <Link to="/">
+              <img
+                className="backIcon"
+                src="/images/Back_arrow.png"
+                alt="뒤로가기"
+              />
+            </Link>
             <span className="back">뒤로</span>
           </div>
         </header>
@@ -58,16 +63,36 @@ const Main = () => {
             <span className="text2">필수사항</span>
           </div>
           <div className="useInfo">
-            <input type="text" placeholder="이메일" className="user" />
-            <input type="text" placeholder="비밀번호" className="user" />
-            <input type="text" placeholder="비밀번호확인" className="user" />
+            <input
+              type="text"
+              placeholder="이메일"
+              className="user"
+              onChange={saveUserId}
+            />
+            <input
+              type="text"
+              placeholder="비밀번호"
+              className="user"
+              onChange={saveUserPw}
+            />
+            <input
+              type="text"
+              placeholder="비밀번호확인"
+              className="user"
+              onChange={saveUserPw2}
+            />
           </div>
           <div className="nicks">
             <label htmlFor="nickName">
               닉네임
               <span className="option">선택사항</span>
             </label>
-            <input type="text" placeholder="닉네임" className="nickName" />
+            <input
+              type="text"
+              placeholder="닉네임"
+              className="nickName"
+              onChange={saveUserNick}
+            />
           </div>
           <div className="phone">
             <label htmlFor="phoneNumber">
@@ -95,20 +120,46 @@ const Main = () => {
               <span className="option">선택사항</span>
             </label>
             <div className="selectBox">
-              <div className="yearWrap">
-                <SelectsBirthYear />
-              </div>
-              <div className="monthWrap">
-                <SelectsBirtMonth />
-              </div>
-              <div className="dayWrap">
-                <SelectsBirtDay />
-              </div>
+              <select className="yearWrap" defaultValue="년">
+                <option value="1990년">1990년</option>
+                <option value="1991년">1991년</option>
+                <option value="1992년">1992년</option>
+                <option value="1993년">1993년</option>
+                <option value="1994년">1994년</option>
+                <option value="1995년">1995년</option>
+              </select>
+
+              <select className="monthWrap" defaultValue="월">
+                <option value="1월">1월</option>
+                <option value="2월">2월</option>
+                <option value="3월">3월</option>
+                <option value="4월">4월</option>
+                <option value="5월">5월</option>
+              </select>
+
+              <select className="dayWrap" defaultValue="일">
+                <option value="1일">1일</option>
+                <option value="2일">2일</option>
+                <option value="3일">3일</option>
+                <option value="4일">4일</option>
+                <option value="5일">5일</option>
+                <option value="6일">6일</option>
+                <option value="7일">7일</option>
+                <option value="8일">8일</option>
+                <option value="9일">9일</option>
+                <option value="10일">10일</option>
+              </select>
             </div>
           </div>
         </container>
         <div className="userJoin">
-          <button className="infoJoin">회원가입</button>
+          <button
+            className={isInputValid ? 'JoinBtn' : 'JoinBtnDisabled'}
+            disabled={isInputValid ? false : true}
+            onClick={handleclick}
+          >
+            회원가입
+          </button>
         </div>
       </div>
     </div>

@@ -27,7 +27,7 @@
     gap: 8px;
     align-self: stretch;
 
-    .infoJoin {
+    .JoinBtn {
       display: flex;
       height: 40px;
       justify-content: center;
@@ -39,233 +39,249 @@
       border-radius: 6px;
       background-color: blue;
       color: white;
-    }
-  }
-}
-
-header {
-  width: 576px;
-  height: 56px;
-  padding: 8px 0 8px 0px;
-
-  .backDiv {
-    height: 30px;
-    display: flex;
-    align-items: center;
-
-    .backIcon {
-      margin-right: 4px;
       cursor: pointer;
-    }
-    .back {
-      font-size: 20px;
+
+      .JoinBtnDisabled {
+        display: flex;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+        align-self: stretch;
+        font-size: 18px;
+        border: 0;
+        outline: 0;
+        border-radius: 6px;
+        background-color: blue;
+        color: white;
+        cursor: pointer;
+      }
     }
   }
-}
 
-container {
-  display: flex;
-  padding: 0px 24px;
-  flex-direction: column;
-  align-items: flex-start;
-
-  h1 {
-    font-size: 24px;
-  }
-
-  .text {
-    width: 100%;
+  header {
+    width: 576px;
     height: 56px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-self: stretch;
-  }
-  .text1 {
-    font-size: 16px;
-  }
-  .text2 {
-    font-size: 12px;
-    color: red;
+    padding: 8px 0 8px 0px;
+
+    .backDiv {
+      height: 30px;
+      display: flex;
+      align-items: center;
+
+      .backIcon {
+        margin-right: 4px;
+        cursor: pointer;
+      }
+      .back {
+        font-size: 20px;
+      }
+    }
   }
 
-  .useInfo {
+  container {
     display: flex;
+    padding: 0px 24px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
-    align-self: stretch;
 
-    .user {
+    h1 {
+      font-size: 24px;
+    }
+
+    .text {
+      width: 100%;
+      height: 56px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
       align-self: stretch;
-      height: 56px;
-      padding: 19px 0 15px 16px;
-      border: 1px solid #e0e0e0;
-      border-radius: 6px;
-      background-color: white;
     }
-  }
-  .nicks {
-    position: relative;
-    width: 100%;
-    height: 86px;
-    margin-top: 24px;
-
-    label {
-      width: 100%;
-      height: 22px;
+    .text1 {
       font-size: 16px;
-      .option {
-        position: absolute;
-        height: 22px;
-        right: 0;
-        line-height: 22px;
-        color: #999;
-        font-size: 12px;
-      }
     }
-    .nickName {
+    .text2 {
+      font-size: 12px;
+      color: red;
+    }
+
+    .useInfo {
       display: flex;
-      align-items: center;
-      align-self: stretch;
-      width: 100%;
-      height: 56px;
-      padding: 19px 0 15px 16px;
-      border-radius: 6px;
-      border: 1px solid #e0e0e0;
-      margin-top: 8px;
-    }
-  }
-  .phone {
-    position: relative;
-    width: 100%;
-    height: 86px;
-    margin-top: 24px;
-
-    label {
-      width: 100%;
-      height: 22px;
-      font-size: 16px;
-      .option {
-        position: absolute;
-        height: 22px;
-        right: 0;
-        line-height: 22px;
-        color: #999;
-        font-size: 12px;
-      }
-    }
-  }
-
-  .selectInput {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    align-self: stretch;
-
-    select {
-      display: flex;
-      width: 136px;
-      height: 56px;
-      padding: 16px 14px 15px 16px;
-      justify-content: center;
-      text-align: center;
-      align-items: center;
-      gap: 40px;
-      margin-top: 8px;
-      margin-right: 8px;
-      border-radius: 6px;
-      border: 1px solid #e0e0e0;
-      font-size: 16px;
-      color: #999999;
-    }
-    #phoneNumber {
-      width: 100%;
-      height: 56px;
-      padding: 19px 0px 15px 16px;
-      margin-top: 8px;
-      border-radius: 6px;
-      border: 1px solid #e0e0e0;
-      font-size: 16px;
-      color: #999999;
-    }
-  }
-
-  .birthday {
-    position: relative;
-    width: 100%;
-    height: 86px;
-    gap: 8px;
-    margin-top: 24px;
-
-    label {
-      width: 100%;
-      height: 22px;
-      font-size: 16px;
-
-      .option {
-        position: absolute;
-        height: 22px;
-        right: 0;
-        line-height: 22px;
-        color: #999;
-        font-size: 12px;
-      }
-    }
-    .selectBox {
-      width: 100%;
-      height: 56px;
+      flex-direction: column;
+      align-items: flex-start;
       gap: 8px;
-      margin-top: 8px;
+      align-self: stretch;
+
+      .user {
+        display: flex;
+        align-items: center;
+        align-self: stretch;
+        height: 56px;
+        padding: 19px 0 15px 16px;
+        border: 1px solid #e0e0e0;
+        border-radius: 6px;
+        background-color: white;
+      }
+    }
+    .nicks {
+      position: relative;
+      width: 100%;
+      height: 86px;
+      margin-top: 24px;
+
+      label {
+        width: 100%;
+        height: 22px;
+        font-size: 16px;
+        .option {
+          position: absolute;
+          height: 22px;
+          right: 0;
+          line-height: 22px;
+          color: #999;
+          font-size: 12px;
+        }
+      }
+      .nickName {
+        display: flex;
+        align-items: center;
+        align-self: stretch;
+        width: 100%;
+        height: 56px;
+        padding: 19px 0 15px 16px;
+        border-radius: 6px;
+        border: 1px solid #e0e0e0;
+        margin-top: 8px;
+      }
+    }
+    .phone {
+      position: relative;
+      width: 100%;
+      height: 86px;
+      margin-top: 24px;
+
+      label {
+        width: 100%;
+        height: 22px;
+        font-size: 16px;
+        .option {
+          position: absolute;
+          height: 22px;
+          right: 0;
+          line-height: 22px;
+          color: #999;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .selectInput {
       display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      align-self: stretch;
 
-      .yearWrap {
+      select {
+        display: flex;
         width: 136px;
+        height: 56px;
+        padding: 16px 14px 15px 16px;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        gap: 40px;
+        margin-top: 8px;
+        margin-right: 8px;
         border-radius: 6px;
         border: 1px solid #e0e0e0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 16px 14px 15px 16px;
-        .birthYear {
-          width: 100%;
-          border-style: none;
-          font-size: 16px;
-          color: #999999;
+        font-size: 16px;
+        color: #999999;
+      }
+      #phoneNumber {
+        width: 100%;
+        height: 56px;
+        padding: 19px 0px 15px 16px;
+        margin-top: 8px;
+        border-radius: 6px;
+        border: 1px solid #e0e0e0;
+        font-size: 16px;
+        color: #999999;
+      }
+    }
+
+    .birthday {
+      position: relative;
+      width: 100%;
+      height: 86px;
+      gap: 8px;
+      margin-top: 24px;
+
+      label {
+        width: 100%;
+        height: 22px;
+        font-size: 16px;
+
+        .option {
+          position: absolute;
+          height: 22px;
+          right: 0;
+          line-height: 22px;
+          color: #999;
+          font-size: 12px;
         }
       }
-      .monthWrap {
-        width: 188px;
-        border-radius: 6px;
-        border: 1px solid #e0e0e0;
+      .selectBox {
+        width: 100%;
+        height: 56px;
+        gap: 8px;
+        margin-top: 8px;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 16px 14px 15px 16px;
 
-        .birthMonth {
-          width: 100%;
-          border-style: none;
-          font-size: 16px;
-          color: #999999;
+        .yearWrap {
+          width: 136px;
+          border-radius: 6px;
+          border: 1px solid #e0e0e0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 16px 14px 15px 16px;
+          .birthYear {
+            width: 100%;
+            border-style: none;
+            font-size: 16px;
+            color: #999999;
+          }
         }
-      }
-      .dayWrap {
-        width: 188px;
-        border-radius: 6px;
-        border: 1px solid #e0e0e0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 16px 14px 15px 16px;
+        .monthWrap {
+          width: 188px;
+          border-radius: 6px;
+          border: 1px solid #e0e0e0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 16px 14px 15px 16px;
 
-        .birthDay {
-          width: 100%;
-          border-style: none;
-          font-size: 16px;
-          color: #999999;
+          .birthMonth {
+            width: 100%;
+            border-style: none;
+            font-size: 16px;
+            color: #999999;
+          }
+        }
+        .dayWrap {
+          width: 188px;
+          border-radius: 6px;
+          border: 1px solid #e0e0e0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 16px 14px 15px 16px;
+
+          .birthDay {
+            width: 100%;
+            border-style: none;
+            font-size: 16px;
+            color: #999999;
+          }
         }
       }
     }
