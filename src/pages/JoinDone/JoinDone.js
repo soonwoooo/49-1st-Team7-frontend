@@ -1,6 +1,6 @@
 import React from 'react';
-import './JoinDone.scss';
 import { useNavigate } from 'react-router-dom';
+import './JoinDone.scss';
 
 const JoinDone = () => {
   const navigate = useNavigate();
@@ -9,9 +9,10 @@ const JoinDone = () => {
     navigate('/join');
   };
 
-  const goToMain = () => {
-    navigate('/main');
+  const goToLogin = () => {
+    navigate('/');
   };
+
   return (
     <div className="Joindone">
       <header>
@@ -37,7 +38,7 @@ const JoinDone = () => {
         </div>
       </div>
       <div className="okayButton">
-        <button onClick={goToMain}>확인</button>
+        <button onClick={goToLogin}>확인</button>
       </div>
     </div>
   );

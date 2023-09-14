@@ -1,9 +1,8 @@
-@import '../../styles/common.scss';
 @import '../../styles/variables.scss';
 
 .Joindone {
   display: flex;
-  width: var(--Container, 576px);
+  width: 576px;
   height: 844px;
   padding: 24px 0px 40px 0px;
   flex-direction: column;
@@ -21,10 +20,8 @@ header {
   align-self: stretch;
 }
 .topInformationContainer {
-  display: flex;
+  @include flexCenter;
   width: 79px;
-  justify-content: center;
-  align-items: center;
   gap: 4px;
   margin: 8px 481px 8px 16px;
 
@@ -39,11 +36,9 @@ header {
 }
 
 .centerInformation {
-  display: flex;
-  justify-content: center;
+  @include flexCenter;
   flex-direction: column;
   gap: 40px;
-  align-items: center;
   padding-bottom: 0px;
   align-self: stretch;
   flex-basis: 100%;
@@ -69,10 +64,8 @@ header {
   }
 }
 .okayButton {
-  display: flex;
+  @include flexCenter;
   padding: 0 24px 0 24px;
-  justify-content: center;
-  align-items: center;
   align-self: stretch;
 
   button {
