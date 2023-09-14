@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState /*useEffect*/ } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Write.scss';
 
@@ -17,12 +17,12 @@ const Write = () => {
 
   /*닉네임 가져오는 fectch */
   // useEffect(() => {
-  //   fetch('api주소', {
+  //   fetch('http://localhost:8000/posts', {
   //     method: 'GET',
   //   })
   //     .then(res => res.json())
   //     .then(data => {
-  //       setUserData(data);
+  //       setUserData(data.postList);
   //     });
   // }, []);
 
@@ -40,6 +40,7 @@ const Write = () => {
     //     method: 'POST',
     //     headers: {
     //       'Content-Type': 'application/json;charset=utf-8',
+    // Authorization: localStorage.getItem('token')
     //     },
     //     body: JSON.stringify({
     //       content: saveText,

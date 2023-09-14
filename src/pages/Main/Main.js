@@ -4,38 +4,39 @@ import './Main.scss';
 
 const Main = () => {
   const navigate = useNavigate();
-  const [userList, setUserList] = useState([]);
+  const [postList, setUserList] = useState([]);
 
   const goToWrite = () => {
     navigate('/write');
   };
 
   useEffect(() => {
-    fetch('/data/data.json', {
-      method: 'GET',
-    })
+    fetch('http://localhost:8000/posts')
       .then(res => res.json())
       .then(data => {
-        setUserList(data);
+        setUserList(data.postList);
       });
   }, []);
-
   return (
     <div className="mainContainer">
       <div className="allWrapper">
         <div className="postWrapper">
-          {userList.map(user => (
-            <div className="contentContainer" key={user.id}>
-              <div className="nameWrapper">
-                <p className="name">{user.nickname}</p>
-                <p className="date">{user.createAt}</p>
+          {postList.map(user => {
+            const { id, nickname, createAt, content } = user;
+
+            return (
+              <div className="contentContainer" key={id}>
+                <div className="nameWrapper">
+                  <p className="name">{nickname}</p>
+                  <p className="date">{createAt}</p>
+                </div>
+                <div className="letterWrapper">
+                  <p>{content}</p>
+                </div>
+                <div className="commentWrapper">댓글 00</div>
               </div>
-              <div className="letterWrapper">
-                <p>{user.content}</p>
-              </div>
-              <div className="commentWrapper">댓글 00</div>
-            </div>
-          ))}
+            );
+          })}
         </div>
         <div className="buttonWrapper">
           <button className="writeButton" onClick={goToWrite}>
