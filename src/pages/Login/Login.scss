@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+}
+
+.login {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .Container {
+    width: 576px;
+    height: 844px;
+    border-radius: 16px;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+
+    .imageContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      width: 100%;
+      height: 555px;
+
+      .logo {
+        width: 118px;
+        height: 143px;
+        .wecode {
+          width: 144px;
+          height: 32px;
+        }
+      }
+    }
+    .inputContainer {
+      display: flex;
+      padding: 0px 24px;
+      flex-direction: column;
+      align-items: center;
+
+      .userInfo {
+        display: flex;
+        width: 100%;
+        height: 56px;
+        margin-bottom: 8px;
+        padding: 19px 0 15px 16px;
+        align-items: center;
+        border-radius: 6px;
+        border: 1px solid #e0e0e0;
+        background-color: white;
+      }
+      .loginBtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 56px;
+        color: white;
+        border-radius: 6px;
+        background-color: blue;
+        font-size: 18px;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+        &:disabled {
+          background: #2d71f7;
+          opacity: 0.5;
+          cursor: default;
+        }
+      }
+      .loginBtnDisabled {
+        width: 100%;
+        height: 56px;
+        color: white;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        border-radius: 6px;
+        border: 1px solid #e0e0e0;
+        background-color: #b2dffc;
+        font-size: 18px;
+        text-align: center;
+      }
+    }
+    .loginOption {
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translate(-50%, 300%);
+      display: flex;
+      gap: 24px;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+    .join {
+      display: block;
+      text-align: center;
+      width: 96px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .bar {
+      width: 16px;
+      border: 1px #e0e0e0;
+      color: #e0e0e0;
+      text-align: center;
+    }
+    .Findpass {
+      display: block;
+      text-align: center;
+      width: 96px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+}
