@@ -53,26 +53,27 @@
   flex-direction: row;
   justify-content: space-between;
   padding-top: 24px;
-}
-.cancle {
-  display: flex;
-  width: 120px;
-  height: 56px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 6px;
-  border: 1px solid Blue;
-  background: White;
-  color: blue;
-}
 
-.commit {
-  display: flex;
-  width: 120px;
-  height: var(--input_Height, 56px);
-  justify-content: center;
-  align-items: center;
-  border-radius: 6px;
-  background: blue;
-  color: white;
+  .cancle {
+    display: flex;
+    width: 120px;
+    height: 56px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    border: 1px solid Blue;
+    background: White;
+    color: blue;
+  }
+
+  .commit {
+    display: flex;
+    width: 120px;
+    height: var(--input_Height, 56px);
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    background: blue;
+    color: white;
+  }
 }

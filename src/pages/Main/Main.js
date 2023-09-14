@@ -4,7 +4,7 @@ import './Main.scss';
 
 const Main = () => {
   const navigate = useNavigate();
-  const [postList, setUserList] = useState([]);
+  const [postList, setPostList] = useState([]);
 
   const goToWrite = () => {
     navigate('/write');
@@ -12,23 +12,25 @@ const Main = () => {
 
   useEffect(() => {
     fetch('http://localhost:8000/posts')
+      // fetch('/data/data.json')
       .then(res => res.json())
       .then(data => {
-        setUserList(data.postList);
+        setPostList(data.postData);
       });
   }, []);
+  console.log(postList);
   return (
     <div className="mainContainer">
       <div className="allWrapper">
         <div className="postWrapper">
           {postList.map(user => {
-            const { id, nickname, createAt, content } = user;
+            const { id, nickname, created_at, content } = user;
 
             return (
               <div className="contentContainer" key={id}>
                 <div className="nameWrapper">
                   <p className="name">{nickname}</p>
-                  <p className="date">{createAt}</p>
+                  <p className="date">{created_at}</p>
                 </div>
                 <div className="letterWrapper">
                   <p>{content}</p>

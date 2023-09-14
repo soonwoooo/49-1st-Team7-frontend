@@ -9,15 +9,15 @@
   margin: auto;
   border: 1px solid;
   border-radius: 16px;
+}
 
-  .allWrapper {
-    display: flex;
-    padding: 0px 24px;
-    flex-direction: column;
-    align-self: stretch;
-    align-items: flex-start;
-    gap: 24px;
-  }
+.allWrapper {
+  display: flex;
+  padding: 0px 24px;
+  flex-direction: column;
+  align-self: stretch;
+  align-items: flex-start;
+  gap: 24px;
 }
 
 .postWrapper {
@@ -59,7 +59,6 @@
   .letterWrapper {
     align-self: stretch;
     color: var(--Black, #000);
-
     font-family: Apple SD Gothic Neo;
     font-size: 20px;
     font-style: normal;
@@ -81,16 +80,16 @@
 .buttonWrapper {
   align-self: stretch;
   gap: 8px;
-}
 
-.writeButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 120px;
-  height: 56px;
-  padding: 0px 34px;
-  border-radius: 6px;
-  background: blue;
-  color: white;
+  .writeButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 56px;
+    padding: 0px 34px;
+    border-radius: 6px;
+    background: blue;
+    color: white;
+  }
 }
