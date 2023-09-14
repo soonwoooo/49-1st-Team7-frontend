@@ -4,6 +4,7 @@ import './Write.scss';
 
 const Write = () => {
   const [saveText, setSaveText] = useState('');
+  // const [userdata,setUserData] = useState([]) /*닉네임 fetch 주석풀면 주석 제거 */
   const navigate = useNavigate();
 
   const goToBack = () => {
@@ -14,6 +15,18 @@ const Write = () => {
     setSaveText(e.target.value);
   };
 
+  /*닉네임 가져오는 fectch */
+  // useEffect(() => {
+  //   fetch('api주소', {
+  //     method: 'GET',
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setUserData(data);
+  //     });
+  // }, []);
+
+  /* 작성버튼을 눌렀을때 통신*/
   const handleCommit = () => {
     if (saveText.length < 1) {
       alert('내용을 입력해 주세요.');
@@ -31,11 +44,14 @@ const Write = () => {
     //     body: JSON.stringify({
     //       content: saveText,
     //     }),
-    //   },
-    // );
+    //   }, );
     //   .then(response => response.json())
-    //   .then(data => console.log(data));
-    //  }
+    //   .then(result => {
+    //   if(result.message === 'post_success'){
+    //     alert('게시글이 작성되었습니다')
+    //     {goToBack}
+    //   }
+    // })
   };
 
   return (
@@ -44,6 +60,7 @@ const Write = () => {
         <div className="publishWrapper">
           <div className="contentWrapper">
             <p>nickname</p>
+            {/* <p>{data.nickname}</p> */}
             <textarea
               placeholder="스레드를 시작하세요"
               onChange={handleSaveText}
