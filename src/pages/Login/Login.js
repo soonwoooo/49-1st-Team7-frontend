@@ -7,6 +7,9 @@ const Login = () => {
   const [pw, setPw] = useState('');
 
   const navigate = useNavigate();
+  const goToMain = () => {
+    navigate('/main');
+  };
 
   const saveUserId = event => {
     setId(event.target.value);
@@ -16,7 +19,7 @@ const Login = () => {
   };
 
   const handleLogin = () => {
-    fetch('http://localhost:8000/login', {
+    fetch('http://10.58.52.239:8000/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -28,11 +31,13 @@ const Login = () => {
     })
       .then(response => response.json())
       .then(data => {
-        if (data.message === 'LOGIN_SUCCESS') {
+        if (data.message === 'login complete') {
+          alert('로그인이 성공했습니다');
           localStorage.setItem('token', data.accessToken);
+          goToMain();
+        } else {
+          alert('로그인 실패 : 올바른 정보를 입력하세요');
         }
-        //console.log(data);
-        navigate('/login');
       });
   };
   const isInputValid = id.includes('@') && id.includes('.') && pw.length >= 10;
@@ -41,8 +46,12 @@ const Login = () => {
     <div className="login">
       <div className="Container">
         <div className="imageContainer">
-          <img className="logo" src="/images/Logo.png" alt="로고" />
-          <img className="wecode" src="/images/logo_wecode.png" alt="위코드" />
+          <img className="logo" src="/images/Wecode_logo.png" alt="로고" />
+          <img
+            className="wecode"
+            src="/images/wecode_letter.png"
+            alt="위코드"
+          />
         </div>
         <div className="inputContainer">
           <input

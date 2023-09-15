@@ -1,31 +1,37 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Join.scss';
 
-const Main = () => {
-  const [id, SetId] = useState('');
-  const [pw, SetPw] = useState('');
-  const [pw2, SetPw2] = useState('');
-  const [nick, SetNick] = useState('');
+const Join = () => {
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
+  const [pw2, setPw2] = useState('');
+  const [nick, setNick] = useState('');
 
   const saveUserId = event => {
-    SetId(event.target.value);
+    setId(event.target.value);
   };
   const saveUserPw = event => {
-    SetPw(event.target.value);
+    setPw(event.target.value);
   };
   const saveUserPw2 = event => {
-    SetPw2(event.target.value);
+    setPw2(event.target.value);
   };
   const saveUserNick = event => {
-    SetNick(event.target.value);
+    setNick(event.target.value);
+  };
+
+  const navigate = useNavigate();
+
+  const goToJoinDone = () => {
+    navigate('/joindone');
   };
 
   const isInputValid =
-    id.includes('@') && id.includes('.') && pw.length && pw2.length >= 10;
+    id.includes('@') && id.includes('.') && pw === pw2 && pw.length >= 10;
 
   const handleclick = () => {
-    fetch('http://localhost:8000/users', {
+    fetch('http://10.58.52.239:8000/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -33,12 +39,18 @@ const Main = () => {
       body: JSON.stringify({
         email: id,
         password: pw,
-        password2: pw2,
         nickname: nick,
       }),
     })
-      .then(response => response.json())
-      .then(data => console.log(data));
+      .then(res => res.json())
+      .then(result => {
+        if (result.message.includes('user create complete')) {
+          goToJoinDone();
+        }
+        if (result.message === 'error! check your input key, plz') {
+          alert('정보를 확인해주세요');
+        }
+      });
   };
 
   return (
@@ -155,7 +167,7 @@ const Main = () => {
         <div className="userJoin">
           <button
             className={isInputValid ? 'JoinBtn' : 'JoinBtnDisabled'}
-            disabled={isInputValid ? false : true}
+            disabled={!isInputValid}
             onClick={handleclick}
           >
             회원가입
@@ -166,4 +178,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Join;

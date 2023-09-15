@@ -1,0 +1,95 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 576px;
+  height: auto;
+  padding: 40px 0px 40px 0px;
+  flex-wrap: nowrap;
+  margin: auto;
+  border: 1px solid;
+  border-radius: 16px;
+}
+
+.allWrapper {
+  display: flex;
+  padding: 0px 24px;
+  flex-direction: column;
+  align-self: stretch;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.postWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  gap: 24px;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0px 8px 24px 8px;
+  align-items: flex-start;
+  align-self: stretch;
+  border-bottom: 1px solid var(--grey90, #e6e6e6);
+
+  .nameWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+
+    .name {
+      font-size: 20px;
+      font-family: Apple SD Gothic Neo;
+    }
+    .date {
+      font-size: 16px;
+      font-family: Apple SD Gothic Neo;
+      color: var(--Grey60, #999);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 22px;
+    }
+  }
+  .letterWrapper {
+    align-self: stretch;
+    color: var(--Black, #000);
+    font-family: Apple SD Gothic Neo;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+  }
+
+  .commentWrapper {
+    color: var(--Grey60, #999);
+
+    font-family: Apple SD Gothic Neo;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+  }
+}
+
+.buttonWrapper {
+  align-self: stretch;
+  gap: 8px;
+
+  .writeButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 56px;
+    padding: 0px 34px;
+    border-radius: 6px;
+    background: blue;
+    color: white;
+  }
+}

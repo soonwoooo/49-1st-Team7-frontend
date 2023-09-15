@@ -14,13 +14,13 @@ const Write = () => {
     setSaveText(e.target.value);
   };
 
-  useEffect(() => {
-    fetch('http://localhost:8000/posts')
-      .then(res => res.json())
-      .then(data => {
-        setUserData(data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch('http://10.58.52.239:8000/posts')
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setUserData(data);
+  //     });
+  // }, []);
 
   const handleCommit = () => {
     if (saveText.length < 1) {
@@ -29,19 +29,20 @@ const Write = () => {
       return;
     }
 
-    fetch('http://localhost:8000/posts', {
+    fetch('http://10.58.52.239:8000/posts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
         Authorization: localStorage.getItem('token'),
       },
       body: JSON.stringify({
-        content: { saveText },
+        content: saveText,
+        nickname: '권순우',
       }),
     })
       .then(res => res.json())
       .then(result => {
-        if (result.message === 'post_success') {
+        if (result.message === 'new post create completes') {
           alert('게시글이 작성되었습니다');
 
           goToBack();

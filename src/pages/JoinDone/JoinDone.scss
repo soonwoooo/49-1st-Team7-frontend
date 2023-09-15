@@ -1,0 +1,78 @@
+@import '../../styles/variables.scss';
+
+.Joindone {
+  display: flex;
+  width: 576px;
+  height: 844px;
+  padding: 24px 0px 40px 0px;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  flex-shrink: 0;
+  margin: auto;
+  border-radius: 16px;
+  border: 1px solid;
+}
+header {
+  height: 56px;
+  align-items: center;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+.topInformationContainer {
+  @include flexCenter;
+  width: 79px;
+  gap: 4px;
+  margin: 8px 481px 8px 16px;
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+  p {
+    font-family: Apple SD Gothic Neo;
+    font-size: 20px;
+  }
+}
+
+.centerInformation {
+  @include flexCenter;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 0px;
+  align-self: stretch;
+  flex-basis: 100%;
+
+  img {
+    width: 136px;
+    height: 136px;
+  }
+}
+.centerletter {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+  h1 {
+    font-size: 24px;
+    font-family: Apple SD Gothic Neo;
+  }
+  h2 {
+    font-size: 20px;
+    font-family: Apple SD Gothic Neo;
+    color: #999;
+  }
+}
+.okayButton {
+  @include flexCenter;
+  padding: 0 24px 0 24px;
+  align-self: stretch;
+
+  button {
+    background-color: blue;
+    color: white;
+    width: 100%;
+    height: 56px;
+    border-radius: 6px;
+  }
+}
