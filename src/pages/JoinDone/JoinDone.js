@@ -19,7 +19,7 @@ const JoinDone = () => {
         <div className="topInformationContainer">
           <img
             src={`${process.env.PUBLIC_URL}/images/Back_arrow.png`}
-            alt="로그인화면으로 이동화살표"
+            alt="회원가입화면으로 이동화살표" /*회원가입 완료에서 뒤로가면 로그인으로 가야할거같은데... */
             onClick={goToJoin}
           />
 
@@ -28,7 +28,7 @@ const JoinDone = () => {
       </header>
       <div className="centerInformation">
         <img
-          src={`${process.env.PUBLIC_URL}/images/banner_square.png`}
+          src={`${process.env.PUBLIC_URL}/images/square_check.png`}
           alt="체크이미지"
         />
 

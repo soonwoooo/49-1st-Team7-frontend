@@ -18,7 +18,6 @@ const Main = () => {
         setPostList(data.postData);
       });
   }, []);
-  console.log(postList);
   return (
     <div className="mainContainer">
       <div className="allWrapper">
