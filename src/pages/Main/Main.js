@@ -11,11 +11,11 @@ const Main = () => {
   };
 
   useEffect(() => {
-    fetch('http://localhost:8000/posts')
+    fetch('http://10.58.52.239:8000/posts')
       // fetch('/data/data.json')
       .then(res => res.json())
       .then(data => {
-        setPostList(data.postData);
+        setPostList(data.postList);
       });
   }, []);
   return (
